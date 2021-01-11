@@ -1,0 +1,72 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info/
+eggs/
+.eggs/
+develop-eggs/
+build/
+dist/
+parts/
+sdist/
+bin/
+var/
+lib/
+lib64/
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.tox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+cover
+*,cover
+htmlcov/
+.hypothesis/
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+*.ropeproject
+
+# Complexity
+output/*.html
+output/*/index.html
+
+# Sphinx
+docs/_build
+
+# Flask
+instance/
+.webassets-cache
+
+# Environments
+.env
+env/
+
+# Local db
+migrations/
+*.db
+
+# Tools
+.DS_Store
+.idea/
+*.iml
+*.sw[po]
