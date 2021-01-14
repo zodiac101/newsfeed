@@ -1,6 +1,7 @@
 import pymongo
 import traceback
 
+#Connecting to the mongo db
 def db_connect():
     db_client = pymongo.MongoClient("mongodb://localhost:27017/")
 

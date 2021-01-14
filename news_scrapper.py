@@ -25,7 +25,7 @@ except AttributeError:
     pass
 else:
     ssl._create_default_https_context = _create_unverified_https_context
-
+# Downloading nltk dependency for scrapping
 nltk.download('punkt')
 
 parser = argparse.ArgumentParser(description='Run news scrapper')
@@ -33,15 +33,19 @@ parser.add_argument('--root_dir', help='Output Directory')
 parser.add_argument('--source_list', help='File containing news sites')
 args = parser.parse_args()
 
+# fetching the arguments
 path_root_dir = args.root_dir
 path_source_list = args.source_list
 
+# max_processes 2 less than cpu_count to accomodate other system actions
 max_processes = multiprocessing.cpu_count() - 2
 
 list_securities = read_file_pickle()
 list_sources = read_file_sources(path_source_list)
-count = 0
 
 process_pool = multiprocessing.Pool(max_processes)
 
-process_pool.starmap(processing_job, zip(list_securities, repeat(list_sources)))
+# parallel scrapping
+process_pool.starmap_async(processing_job, zip(list_securities, repeat(list_sources)))
+
+process_pool.close()
